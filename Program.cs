@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NBitcoin.Accounts;
 using Nethereum.Accounts;
 
@@ -8,8 +8,8 @@ namespace GenerateWallets
     {
         static void Main(string[] args)
         {
-            // Seed for both ETH and BTC
-            string seed = "This is the seed";
+            // Password for both ETH and BTC
+            string password = "This is the password";
 
             Console.WriteLine("");
             Console.WriteLine("Generating ETH and BTC addresses & private keys...");
@@ -20,7 +20,7 @@ namespace GenerateWallets
             {
                 string path = "C:\\GENKEYS\\ETH";
                 ETHaccountCreator ETHgenKeys = new ETHaccountCreator();
-                var ETHaddress = ETHgenKeys.CreateAccount(seed, path);
+                var ETHaddress = ETHgenKeys.CreateAccount(password, path);
                 Console.WriteLine("ETH keyStore file: " + ETHaddress);
                 Console.WriteLine("Saved to: " + path);
                 Console.WriteLine("");
@@ -35,7 +35,7 @@ namespace GenerateWallets
             {
                 string path = "C:\\GENKEYS\\BTC";
                 BTCaccountCreator BTCgenKeys = new BTCaccountCreator();
-                var BTCaddress = BTCgenKeys.CreateAccount(seed, path);
+                var BTCaddress = BTCgenKeys.CreateAccount(password, path);
                 Console.WriteLine("BTC keyStore file: " + BTCaddress);
                 Console.WriteLine("Saved to: " + path);
                 Console.WriteLine("");
